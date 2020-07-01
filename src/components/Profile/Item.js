@@ -1,14 +1,14 @@
-import React from "react";
-import styles from "../../assets/css/Profile.module.css";
-import Input from "./Input";
+import React from 'react';
+import styles from '../../assets/css/Profile.module.css';
+import Input from './Input';
 
 const Item = ({ configurable, name, active, selectItem }) => {
   return (
     <div
       className={`
-      ${styles["profile-item"]} 
+      ${styles['profile-item']} 
       ${configurable ? styles.custom : styles[name]} 
-      ${active ? styles.active : ""} 
+      ${active ? styles.active : ''} 
       `}
       onClick={selectItem}
     >

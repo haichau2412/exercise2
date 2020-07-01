@@ -55,14 +55,14 @@
   transition: opacity 0.3s linear;
 }
 .toolbar > .icon.add {
-  background-image: url("../images/icon_plus.svg");
+  background-image: url('../images/icon_plus.svg');
 }
 .toolbar > .icon.edit {
-  background-image: url("../images/icon_edit.svg");
+  background-image: url('../images/icon_edit.svg');
   display: none;
 }
 .toolbar > .icon.delete {
-  background-image: url("../images/icon_delete.svg");
+  background-image: url('../images/icon_delete.svg');
   display: none;
 }
 .toolbar > .icon.edit.show,
@@ -70,12 +70,12 @@
   display: block;
 }
 .toolbar > .icon.up {
-  background-image: url("../images/icon_arrow_up.svg");
+  background-image: url('../images/icon_arrow_up.svg');
   position: absolute;
   left: 0;
 }
 .toolbar > .icon.down {
-  background-image: url("../images/icon_arrow_down.svg");
+  background-image: url('../images/icon_arrow_down.svg');
   position: absolute;
   left: 30px;
 }
@@ -115,9 +115,9 @@
 }
 input.profile-item {
   z-index: 2;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   position: absolute;
-  /* display: none; */
+  display: none;
   width: calc(100% - 30px);
   top: 0;
   left: 0;
@@ -146,7 +146,7 @@ input.profile-item:active {
   color: #ccc;
 }
 .profile-item::before {
-  content: " ";
+  content: ' ';
   width: 20px;
   height: 20px;
   display: block;
@@ -155,39 +155,39 @@ input.profile-item:active {
   background-position: center;
 }
 .profile-item.default::before {
-  background-image: url("../images/icon_profiles_default.svg");
+  background-image: url('../images/icon_profiles_default.svg');
 }
 .profile-item.game::before {
-  background-image: url("../images/icon_profiles_game.svg");
+  background-image: url('../images/icon_profiles_game.svg');
 }
 .profile-item.movie::before {
-  background-image: url("../images/icon_profiles_movie.svg");
+  background-image: url('../images/icon_profiles_movie.svg');
 }
 .profile-item.music::before {
-  background-image: url("../images/icon_profiles_music.svg");
+  background-image: url('../images/icon_profiles_music.svg');
 }
 .profile-item.custom::before {
-  background-image: url("../images/icon_profiles_custom.svg");
+  background-image: url('../images/icon_profiles_custom.svg');
 }
 .profile-item.default:active::before,
 .profile-item.default.active::before {
-  background-image: url("../images/profile_sel_default.svg");
+  background-image: url('../images/profile_sel_default.svg');
 }
 .profile-item.game:active::before,
 .profile-item.game.active::before {
-  background-image: url("../images/profile_sel_game.svg");
+  background-image: url('../images/profile_sel_game.svg');
 }
 .profile-item.movie:active::before,
 .profile-item.movie.active::before {
-  background-image: url("../images/profile_sel_movie.svg");
+  background-image: url('../images/profile_sel_movie.svg');
 }
 .profile-item.music:active::before,
 .profile-item.music.active::before {
-  background-image: url("../images/profile_sel_music.svg");
+  background-image: url('../images/profile_sel_music.svg');
 }
 .profile-item.custom:active::before,
 .profile-item.custom.active::before {
-  background-image: url("../images/profile_sel_custom.svg");
+  background-image: url('../images/profile_sel_custom.svg');
 }
 /* .thx-logo {
 	width: 167px;

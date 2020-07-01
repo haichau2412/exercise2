@@ -1,21 +1,22 @@
-import React from "react";
-import styles from "../../assets/css/Profile.module.css";
-import { useAlteration } from "./AlterationProvider";
+import React from 'react';
+import styles from '../../assets/css/Profile.module.css';
+import { useAlteration } from './AlterationProvider';
 
 const Toolbar = ({ configurable, add, moveUp, moveDown }) => {
-  const { togglePopup } = useAlteration();
+  const { togglePopup, toggleFocus } = useAlteration();
 
   return (
     <div className={`${styles.toolbar} flex`}>
       <div className={`${styles.icon} ${styles.add}`} onClick={add}></div>
       <div
         className={`${styles.icon} ${styles.edit} ${
-          configurable ? styles.show : ""
+          configurable ? styles.show : ''
         }`}
+        onClick={toggleFocus}
       ></div>
       <div
         className={`${styles.icon} ${styles.delete} ${
-          configurable ? styles.show : ""
+          configurable ? styles.show : ''
         } `}
         onClick={togglePopup}
       ></div>
