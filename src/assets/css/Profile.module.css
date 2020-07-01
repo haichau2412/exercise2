@@ -221,7 +221,7 @@ input.profile-item:active {
   visibility: visible;
   opacity: 1;
 }
-.alert .title {
+.alert :global .title {
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
@@ -229,10 +229,10 @@ input.profile-item:active {
   text-align: center;
   line-height: 17px;
 }
-.alert .body-text {
+.alert :global .body-text {
   margin: 10px;
 }
-.alert div.thx-btn {
+.alert div :global .thx-btn {
   height: 27px;
   width: auto;
   font-size: 12px;
@@ -244,7 +244,7 @@ input.profile-item:active {
   min-width: 90px;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
-#profileList {
+.profileList {
   max-height: 189px;
   position: absolute;
   width: 100%;

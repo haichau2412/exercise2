@@ -1,12 +1,16 @@
 import React from "react";
-import styles from "../assets/css/Profile.module.css";
+import { useSelector } from "react-redux";
+
+const mapStateToProps = (state) =>
+  state.profile[state.selectedProfile.index].name;
 
 const ProfileDetail = () => {
+  const name = useSelector(mapStateToProps);
   return (
-    <div className={styles["thx-window"]}>
+    <div className='thx-window'>
       <div className='sub-title flex'>
         <h1 id='eqTitle' className='eq-title'>
-          Default
+          {name}
         </h1>
       </div>
     </div>

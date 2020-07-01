@@ -1,6 +1,6 @@
 import React from "react";
-import ProfileDetail from "./containers/ProfileDetail";
-import ProfileDashboard from "./containers/ProfileDashboard";
+import ProfileDetail from "./containers/Profile/ProfileDetail";
+import ProfileDashboard from "./containers/Profile/ProfileDashboard";
 
 const App = () => {
   return (
