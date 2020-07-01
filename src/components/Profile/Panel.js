@@ -16,11 +16,6 @@ const Panel = ({ profile, selectItem, selectedProfile }) => {
           />
         );
       })}
-      <input
-        className={styles["profile-item"]}
-        placeholder='Enter Profile Name'
-        maxLength='25'
-      />
     </div>
   );
 };

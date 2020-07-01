@@ -109,7 +109,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow-x: hidden;
-
+  position: relative;
   will-change: color, background-color;
   transition: color 0.2s, background-color 0.2s;
 }
@@ -117,8 +117,10 @@ input.profile-item {
   z-index: 2;
   font-family: "Roboto", sans-serif;
   position: absolute;
-  display: none;
+  /* display: none; */
   width: calc(100% - 30px);
+  top: 0;
+  left: 0;
   margin-left: 30px;
   border: 1px solid #44d62c;
   box-sizing: border-box;
@@ -232,7 +234,7 @@ input.profile-item:active {
 .alert :global .body-text {
   margin: 10px;
 }
-.alert div :global .thx-btn {
+.alert :global .thx-btn {
   height: 27px;
   width: auto;
   font-size: 12px;

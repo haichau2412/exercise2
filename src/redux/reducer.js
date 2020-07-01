@@ -6,6 +6,7 @@ const newId = () => {
   id++;
   return id;
 };
+
 const initialState = {
   profile: [
     { name: "default", id: 0, configurable: false },
@@ -31,6 +32,8 @@ const deleteItemAtIndex = (array, index) => {
   return [...array.slice(0, index), ...array.slice(index + 1)];
 };
 
+// const swapLocation = (array,index)
+
 // const deleteItemWithId = (array, id) => {
 //   return array.reduce((result, item) => {
 //     if (item.id === id) {
@@ -50,7 +53,7 @@ const reducer = (state = initialState, action) => {
       };
     }
     case actions.delete: {
-      const { index, id } = action.payload;
+      const { index, id } = state.selectedProfile;
       let cloneProfile = createCloneArray(state.profile);
       if (cloneProfile[index].id === id && cloneProfile[index].configurable) {
         cloneProfile = deleteItemAtIndex(cloneProfile, index);

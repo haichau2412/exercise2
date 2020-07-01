@@ -4,6 +4,7 @@ import Panel from "../../components/Profile/Panel";
 import Toolbar from "../../components/Profile/Toolbar";
 import Alert from "../../components/Profile/Alert";
 import { useSelector, useDispatch } from "react-redux";
+import { AlterationContextProvider } from "../../components/Profile/AlterationProvider";
 
 const mapStateToProps = (state) => ({
   profile: state.profile,
@@ -34,16 +35,18 @@ const ProfileDashboard = () => {
     <div className={`${styles["thx-drawer"]} flex`}>
       <div className='main-title'>Profile List</div>
       <div className={`${styles["drawer-select"]} flex`}>
-        <Panel
-          profile={profile}
-          selectItem={selectItem}
-          selectedProfile={selectedProfile}
-        />
-        <Toolbar
-          {...actions}
-          configurable={profile[selectedProfile.index].configurable}
-        />
-        <Alert />
+        <AlterationContextProvider>
+          <Panel
+            profile={profile}
+            selectItem={selectItem}
+            selectedProfile={selectedProfile}
+          />
+          <Toolbar
+            {...actions}
+            configurable={profile[selectedProfile.index].configurable}
+          />
+          <Alert />
+        </AlterationContextProvider>
       </div>
     </div>
   );

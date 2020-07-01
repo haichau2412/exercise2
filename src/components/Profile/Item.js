@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../assets/css/Profile.module.css";
+import Input from "./Input";
 
 const Item = ({ configurable, name, active, selectItem }) => {
   return (
@@ -12,6 +13,7 @@ const Item = ({ configurable, name, active, selectItem }) => {
       onClick={selectItem}
     >
       {name}
+      {active ? <Input /> : null}
     </div>
   );
 };
