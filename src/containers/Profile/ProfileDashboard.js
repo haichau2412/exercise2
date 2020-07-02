@@ -42,6 +42,8 @@ const ProfileDashboard = () => {
             selectedProfile={selectedProfile}
           />
           <Toolbar
+            index={selectedProfile.index}
+            length={profile.length}
             {...actions}
             configurable={profile[selectedProfile.index].configurable}
           />

@@ -4,17 +4,26 @@ import { useAlteration } from "./AlterationProvider";
 import { useDispatch } from "react-redux";
 
 const Alert = () => {
-  const { popup } = useAlteration();
+  const { popup, name, targetRef, togglePopup } = useAlteration();
+
   const dispatch = useDispatch();
+
   return (
     <div
+      ref={targetRef}
       className={`${styles["profile-del"]} ${styles.alert}  flex 
       ${popup ? styles.show : ""}
       `}
     >
       <div className='title'>delete eq</div>
-      <div className='body-text t-center'>delete eq</div>
-      <div className='thx-btn' onClick={() => dispatch({ type: "DELETE" })}>
+      <div className='body-text t-center'>{name}</div>
+      <div
+        className='thx-btn'
+        onClick={() => {
+          dispatch({ type: "DELETE" });
+          togglePopup();
+        }}
+      >
         delete
       </div>
     </div>
