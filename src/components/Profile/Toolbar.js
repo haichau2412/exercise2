@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "../../assets/css/Profile.module.css";
 import { useAlteration } from "./AlterationProvider";
 
-const Toolbar = ({ configurable, add, moveUp, moveDown, index, length }) => {
+const mapStateToProps = (state) => ({
+  index: state.selectedProfile.index,
+  configurable: state.profile[state.selectedProfile.index].configurable,
+  profileLength: state.profile.length,
+});
+
+const Toolbar = () => {
+  const { index, configurable, profileLength } = useSelector(mapStateToProps);
   const { toggleFocus, triggerRef } = useAlteration();
+  const dispatch = useDispatch();
+
+  const actions = useMemo(() => {
+    return {
+      add: () => dispatch({ type: "ADD" }),
+      moveUp: () => dispatch({ type: "MOVE_UP" }),
+      moveDown: () => dispatch({ type: "MOVE_DOWN" }),
+    };
+  }, [dispatch]);
 
   return (
     <div className={`${styles.toolbar} flex`}>
-      <div className={`${styles.icon} ${styles.add}`} onClick={add}></div>
+      <div
+        className={`${styles.icon} ${styles.add}`}
+        onClick={actions.add}
+      ></div>
       <div
         className={`${styles.icon} ${styles.edit} ${
           configurable ? styles.show : ""
@@ -23,15 +43,15 @@ const Toolbar = ({ configurable, add, moveUp, moveDown, index, length }) => {
 
       <div
         className={`${styles.icon} ${styles.down} ${
-          index === length - 1 ? styles.disabled : ""
+          index === profileLength - 1 ? styles.disabled : ""
         }`}
-        onClick={moveDown}
+        onClick={actions.moveDown}
       ></div>
       <div
         className={`${styles.icon} ${styles.up} ${
           index === 0 ? styles.disabled : ""
         }`}
-        onClick={moveUp}
+        onClick={actions.moveUp}
       ></div>
     </div>
   );

@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 
 const Alert = () => {
   const { popup, name, targetRef, togglePopup } = useAlteration();
-
   const dispatch = useDispatch();
 
   return (

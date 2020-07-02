@@ -1,15 +1,27 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import styles from "../../assets/css/Profile.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Item from "./Item";
 
 const mapStateToProps = (state) => ({
-  length: state.profile.length,
+  profile: state.profile,
+  selectedProfile: state.selectedProfile,
+  profileLength: state.profile.length,
 });
 
-const Panel = ({ profile, selectItem, selectedProfile }) => {
-  const { length: profileLength } = useSelector(mapStateToProps);
+const Panel = () => {
+  const { profileLength, profile, selectedProfile } = useSelector(
+    mapStateToProps
+  );
   const panelRef = useRef();
+  const dispatch = useDispatch();
+
+  const selectItem = useCallback(
+    (index, id) => {
+      dispatch({ type: "SELECT", payload: { index, id } });
+    },
+    [dispatch]
+  );
 
   useEffect(() => {
     if (
